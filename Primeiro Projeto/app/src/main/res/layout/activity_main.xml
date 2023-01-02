@@ -14,14 +14,35 @@
         tools:layout_editor_absoluteX="169dp"
         tools:layout_editor_absoluteY="294dp" />
 
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/ic_back"
         app:iconTint="#000000"
-        app:iconGravity="textEnd"
-        android:text="Button"
+        app:iconGravity="textTop"
+        android:fontFamily="@font/skyzone"
         tools:layout_editor_absoluteX="172dp"
         tools:layout_editor_absoluteY="413dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="TextView"
+        android:textSize="50sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="101dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/skyzone"
+        android:text="Button"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="77dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
