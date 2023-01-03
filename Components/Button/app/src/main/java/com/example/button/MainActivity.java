@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnClick = findViewById(R.id.btnClick);
 
-        btnClick.setOnClickListener(view -> Toast.makeText(this, "Meu botãozao", Toast.LENGTH_SHORT).show());
+        btnClick.setOnClickListener(view -> Toast.makeText(this, "", Toast.LENGTH_SHORT).show());
 
 
     }
