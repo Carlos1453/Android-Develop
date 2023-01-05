@@ -20,12 +20,10 @@ public class SegundaActivity extends AppCompatActivity {
         textIdade = findViewById(R.id.text_idade);
         textAltura  = findViewById(R.id.text_altura);
 
-        String nome = (String) getIntent().getSerializableExtra("meu_nome");
-        int idade = (Integer) getIntent().getSerializableExtra("minha_idade");
-        double altura = (Double) getIntent().getSerializableExtra("minha_altura");
+       Pessoa pessoa = (Pessoa) getIntent().getSerializableExtra("pessoa");
 
-        textName.setText(nome);
-        textIdade.setText(String.valueOf(idade +" anos"));
-        textAltura.setText(String.valueOf(altura + " Cm"));
+        textName.setText(pessoa.getNome());
+        textIdade.setText(String.valueOf(pessoa.getIdade() +" anos"));
+        textAltura.setText(String.valueOf(pessoa.getAltura() + " Cm"));
     }
 }

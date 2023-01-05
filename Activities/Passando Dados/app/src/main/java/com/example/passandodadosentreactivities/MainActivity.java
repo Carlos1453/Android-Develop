@@ -28,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
             int idade = Integer.parseInt(editIdade.getText().toString());
             double altura = Double.parseDouble(editAltura.getText().toString());
 
+            Pessoa pessoa = new Pessoa();
+            pessoa.setNome(nome);
+            pessoa.setIdade(idade);
+            pessoa.setAltura(altura);
+
             Intent intent = new Intent(this, SegundaActivity.class);
-            intent.putExtra("meu_nome", nome);
-            intent.putExtra("minha_idade", idade);
-            intent.putExtra("minha_altura", altura);
+            intent.putExtra("pessoa", pessoa);
             startActivity(intent);
         });
     }
