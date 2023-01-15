@@ -1,10 +1,18 @@
 package com.example.controledeprodutos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
@@ -19,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements AdapterProduto.On
     private List<Produto> produtoList = new ArrayList<>();
     private SwipeableRecyclerView rv_produtos;
 
+    private ImageButton icAdd;
+    private ImageButton icVerMais;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +37,34 @@ public class MainActivity extends AppCompatActivity implements AdapterProduto.On
 
 
         rv_produtos = findViewById(R.id.rv_produtos);
+        icAdd = findViewById(R.id.ic_add);
+        icVerMais = findViewById(R.id.ic_ver_mais);
 
         carregaLista();
 
         configRecycleView();
+        ouvinteCliques();
+
+    }
+
+    private void ouvinteCliques(){
+        icAdd.setOnClickListener(view ->{
+            Toast.makeText(this, "Add", Toast.LENGTH_SHORT).show();
+        } );
+        icVerMais.setOnClickListener(view -> {
+            PopupMenu popupMenu = new PopupMenu(this, icVerMais);
+            popupMenu.getMenuInflater().inflate(R.menu.menu_toolbar, popupMenu.getMenu());
+
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+                if(menuItem.getItemId() == R.id.menu_sobre){
+                    Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            });
+
+            popupMenu.show();
+
+        });
 
     }
 
