@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdapterProduto.On
 
     private void ouvinteCliques(){
         icAdd.setOnClickListener(view ->{
-            Toast.makeText(this, "Add", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, FormProdutoActivity.class));
         } );
         icVerMais.setOnClickListener(view -> {
             PopupMenu popupMenu = new PopupMenu(this, icVerMais);
